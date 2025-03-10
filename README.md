@@ -64,6 +64,6 @@ python lln.py
 
 ## 3. License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/0KeirLi0/Explain_By_Manim/blob/main/LICENSE) file for details.
 
 This comprehensive guide provides all the necessary information for users to set up their virtual environment and run the LLN script successfully. It covers everything from prerequisites and setup to troubleshooting and best practices. The guide is well-structured and easy to follow, making it accessible for users with varying levels of experience.
