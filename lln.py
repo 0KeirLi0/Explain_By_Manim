@@ -48,7 +48,7 @@ class LLNScene(Scene):
             
             # Coins animation (simple representation)
             coins = VGroup(*[Dot(radius=0.1) for _ in range(min(n, 10))])  # Limit to 10 visible coins
-            coins.arrange(RIGHT, buff=0.2).move_to(UP * 1)
+            coins.arrange(RIGHT, buff=0.2).move_to(UP * 1.5)
             if n > 10:
                 extra_text = Text(f"+ {n-10} more...").scale(0.5).next_to(coins, RIGHT)
                 coins.add(extra_text)
@@ -68,3 +68,22 @@ class LLNScene(Scene):
 
         # Fade out everything
         self.play(FadeOut(Group(*self.mobjects)))
+
+# Add the main entry point
+if __name__ == "__main__":
+    import sys
+    from manim.utils.module_ops import get_scene_classes_from_module
+    
+    # Get all scene classes defined in this module
+    scenes = get_scene_classes_from_module(sys.modules[__name__])
+    
+    # If you want to render a specific scene, you can do:
+    # python your_file.py LLNScene
+    if len(sys.argv) > 1:
+        scene_name = sys.argv[1]
+        if scene_name in scenes:
+            scene = scenes[scene_name]()
+            scene.render()
+    else:
+        # Default to rendering the LLNScene
+        LLNScene().render()
